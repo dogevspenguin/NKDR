@@ -29,9 +29,9 @@ namespace NuclearExplosive
         [KSPEvent(guiActive = true, guiName = "Detonate", category = "none", requireFullControl = false)]
         public void DetonateAG(KSPActionParam param)
         {
-            {
+            //{To many brackets is what is causing the error delete these or leave commented out like this
                 Explode();
-            }
+            //}
         }
 
         bool hasExploded = false;
@@ -73,7 +73,7 @@ namespace NuclearExplosive
                 {
                     hasExploded = true;
 
-                    if (part != null) part.temperature = part.maxTemp + 250;
+                    if (part != null) part.temperature = part.maxTemp + 100;
 
                     GameObject source = new GameObject();
                     source.SetActive(true);
@@ -89,7 +89,7 @@ namespace NuclearExplosive
                     {
                         hasExploded = true;
 
-                        if (part != null) part.temperature = part.maxTemp + 230;
+                        if (part != null) part.temperature = part.maxTemp + 100;
 
                         GameObject csource = new GameObject();
                         csource.SetActive(true);
@@ -105,7 +105,7 @@ namespace NuclearExplosive
                         {
                             hasExploded = true;
 
-                            if (part != null) part.temperature = part.maxTemp + 500;
+                            if (part != null) part.temperature = part.maxTemp + 100;
 
                             GameObject source = new GameObject();
                             source.SetActive(true);
@@ -121,7 +121,7 @@ namespace NuclearExplosive
                             {
                                 hasExploded = true;
 
-                                if (part != null) part.temperature = part.maxTemp + 700;
+                                if (part != null) part.temperature = part.maxTemp + 100;
 
                                 GameObject csource = new GameObject();
                                 csource.SetActive(true);
