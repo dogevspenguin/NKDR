@@ -15,16 +15,16 @@ namespace NuclearExplosive
         public Part explosivePart;
 
         [KSPField(isPersistant = false)]
-        public string explSpacePath = "North Kerbin Weaponry/effects/Explosion_340_Space";
+        public string explSpacePath = "NKDR/effects/Explosion_340_Space"; //Changed paths to NKDR no one will have NKD installed if this is installed
 
         [KSPField(isPersistant = false)]
-        public string explAirPath = "North Kerbin Weaponry/effects/Explosion_340_Airburst";
+        public string explAirPath = "NKDR/effects/Explosion_340_Airburst"; //Changed paths to NKDR no one will have NKD installed if this is installed
 
         [KSPField(isPersistant = false)]
-        public string explGroundPath = "North Kerbin Weaponry/effects/Explosion_340";
+        public string explGroundPath = "NKDR/effects/Explosion_340"; //Changed paths to NKDR no one will have NKD installed if this is installed
 
         [KSPField(isPersistant = false)]
-        public string explSoundPath = "North Kerbin Weaponry/sounds/explosion_MOAB";
+        public string explSoundPath = "NKDR/sounds/explosion_MOAB"; //Changed paths to NKDR no one will have NKD installed if this is installed
 
         [KSPEvent(guiActive = true, guiName = "Detonate", category = "none", requireFullControl = false)]
         public void DetonateAG(KSPActionParam param)
