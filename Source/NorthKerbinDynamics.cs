@@ -28,56 +28,56 @@ namespace NuclearExplosive
         public Part explosivePart;
 
         [KSPField(isPersistant = false)]
-        public string explSpacePath = "North Kerbin Weaponry/effects/Explosion_340_Space";
+        public string explSpacePath = "NKDR/effects/Explosion_340_Space";
 
         [KSPField(isPersistant = false)]
-        public string explAirPath = "North Kerbin Weaponry/effects/Explosion_340_Airburst";
+        public string explAirPath = "NKDR/effects/Explosion_340_Airburst";
 
         [KSPField(isPersistant = false)]
-        public string explGroundPath = "North Kerbin Weaponry/effects/Explosion_340";
+        public string explGroundPath = "NKDR/effects/Explosion_340";
 
         [KSPField(isPersistant = false)]
-        public string explSoundPath = "North Kerbin Weaponry/sounds/explosion_MOAB";
+        public string explSoundPath = "NKDR/sounds/explosion_MOAB";
 
         [KSPField(isPersistant = false)]
-        public string detonatorExpl = "North Kerbin Weaponry/effects/Explosion_M26.mu";
+        public string detonatorExpl = "NKDR/effects/Explosion_M26.mu";
 
         [KSPField(isPersistant = false)]
-        public string primaryCore = "North Kerbin Weaponry/effects/Explosion_Scud";
+        public string primaryCore = "NKDR/effects/Explosion_Scud";
 
         [KSPField(isPersistant = false)]
-        public string secondaryCore = "North Kerbin Weaponry/effects/Explosion_Megaton";
+        public string secondaryCore = "NKDR/effects/Explosion_Megaton";
 
         [KSPEvent(guiActive = true, guiName = "Detonate", category = "none", requireFullControl = false)]
         public void DetonateAG(KSPActionParam param)
         {
-            {
+            //{to many brackets
                 Explode();
-            }
+            //}
         }
 
         [KSPEvent(guiActive = true, guiName = "Detonator", category = "none", requireFullControl = false)]
         public void Detonator(KSPActionParam param)
         {
-            {
+            //{
                 Detonator();
-            }
+            //}
         }
 
         [KSPEvent(guiActive = true, guiName = "Detonator", category = "none", requireFullControl = false)]
         public void DetonatePrimary(KSPActionParam param)
         {
-            {
+            //{
                 DetonatePrimary();
-            }
+            //}
         }
 
         [KSPEvent(guiActive = true, guiName = "Detonator", category = "none", requireFullControl = false)]
         public void DetonateSecondary(KSPActionParam param)
         {
-            {
+            //{
                 DetonateSecondary();
-            }
+            //}
         }
 
         bool hasExploded = false;
