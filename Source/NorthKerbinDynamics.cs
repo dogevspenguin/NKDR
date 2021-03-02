@@ -13,6 +13,7 @@ namespace NuclearExplosive
         public float blastTemperature;
         public bool Missile;
         public float bullets;
+        public float DetonationDeley;
         public Part explosivePart;
 
         [KSPField(isPersistant = false)]
@@ -46,7 +47,12 @@ namespace NuclearExplosive
 
         public override void OnStart(PartModule.StartState state)
         {
-            part.OnJustAboutToBeDestroyed += new Callback(Explode);
+            part.OnJustAboutToBeDestroyed += new Callback(Det);
+        }
+
+        public void Det()
+        {
+            Invoke("Explode", DetonationDeley);
         }
 
         public void Explode()
@@ -72,7 +78,7 @@ namespace NuclearExplosive
             }
             else
             {
-                if (!hasExploded && weapon.vessel.heightFromTerrain <= 50000 && weapon.vessel.heightFromTerrain >= 501 && weapon.TimeFired >= weapon.dropTime && weapon.blastRadius >= 1000)
+                if (!hasExploded && weapon.vessel.altitude <= 0 && weapon.TimeFired >= weapon.dropTime)
                 {
                     hasExploded = true;
 
@@ -83,60 +89,60 @@ namespace NuclearExplosive
                     source.transform.position = position;
                     source.transform.rotation = rotation;
                     source.transform.up = direction;
-                    ExplosionFx.CreateExplosion(position, blastPower, explAirPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
-                    Debug.Log("Air explosion confirmed");
+                    ExplosionFx.CreateExplosion(position, blastPower, explWaterPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
+                    Debug.Log("Underwater explosion confirmed");
                 }
                 else
                 {
-                    if (!hasExploded && weapon.vessel.heightFromTerrain <= 60000 && weapon.vessel.heightFromTerrain >= 501 && weapon.TimeFired >= weapon.dropTime && weapon.blastRadius <= 1000)
+                    if (!hasExploded && weapon.vessel.heightFromTerrain <= 50000 && weapon.vessel.heightFromTerrain >= 501 && weapon.TimeFired >= weapon.dropTime && weapon.blastRadius >= 1000)
                     {
                         hasExploded = true;
 
                         if (part != null) part.temperature = part.maxTemp + 100;
 
-                        GameObject csource = new GameObject();
-                        csource.SetActive(true);
-                        csource.transform.position = position;
-                        csource.transform.rotation = rotation;
-                        csource.transform.up = direction;
+                        GameObject source = new GameObject();
+                        source.SetActive(true);
+                        source.transform.position = position;
+                        source.transform.rotation = rotation;
+                        source.transform.up = direction;
                         ExplosionFx.CreateExplosion(position, blastPower, explAirPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
                         Debug.Log("Air explosion confirmed");
                     }
                     else
                     {
-                        if (!hasExploded && weapon.TimeFired >= weapon.dropTime && weapon.vessel.heightFromTerrain <= 450 && weapon.blastRadius >= 1000)
+                        if (!hasExploded && weapon.vessel.heightFromTerrain <= 60000 && weapon.vessel.heightFromTerrain >= 501 && weapon.TimeFired >= weapon.dropTime && weapon.blastRadius <= 1000)
                         {
                             hasExploded = true;
 
                             if (part != null) part.temperature = part.maxTemp + 100;
 
-                            GameObject source = new GameObject();
-                            source.SetActive(true);
-                            source.transform.position = position;
-                            source.transform.rotation = rotation;
-                            source.transform.up = direction;
-                            ExplosionFx.CreateExplosion(position, blastPower, explGroundPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
-                            Debug.Log("Ground explosion confirmed");
+                            GameObject csource = new GameObject();
+                            csource.SetActive(true);
+                            csource.transform.position = position;
+                            csource.transform.rotation = rotation;
+                            csource.transform.up = direction;
+                            ExplosionFx.CreateExplosion(position, blastPower, explAirPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
+                            Debug.Log("Air explosion confirmed");
                         }
                         else
                         {
-                            if (!hasExploded && weapon.TimeFired >= weapon.dropTime && weapon.vessel.heightFromTerrain <= 250 && weapon.blastRadius <= 1000)
+                            if (!hasExploded && weapon.TimeFired >= weapon.dropTime && weapon.vessel.heightFromTerrain <= 450 && weapon.blastRadius >= 1000)
                             {
                                 hasExploded = true;
 
                                 if (part != null) part.temperature = part.maxTemp + 100;
 
-                                GameObject csource = new GameObject();
-                                csource.SetActive(true);
-                                csource.transform.position = position;
-                                csource.transform.rotation = rotation;
-                                csource.transform.up = direction;
+                                GameObject source = new GameObject();
+                                source.SetActive(true);
+                                source.transform.position = position;
+                                source.transform.rotation = rotation;
+                                source.transform.up = direction;
                                 ExplosionFx.CreateExplosion(position, blastPower, explGroundPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
                                 Debug.Log("Ground explosion confirmed");
                             }
                             else
                             {
-                                if (!hasExploded && weapon.TimeFired >= weapon.dropTime && weapon.vessel.altitude <= 0)
+                                if (!hasExploded && weapon.TimeFired >= weapon.dropTime && weapon.vessel.heightFromTerrain <= 250 && weapon.blastRadius <= 1000)
                                 {
                                     hasExploded = true;
 
@@ -148,7 +154,7 @@ namespace NuclearExplosive
                                     csource.transform.rotation = rotation;
                                     csource.transform.up = direction;
                                     ExplosionFx.CreateExplosion(position, blastPower, explGroundPath, explSoundPath, Missile = true, bullets = 0, explosivePart = null, direction = default(Vector3));
-                                    Debug.Log("Underwater explosion confirmed");
+                                    Debug.Log("Ground explosion confirmed");
                                 }
                             }
                         }
