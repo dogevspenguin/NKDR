@@ -1,0 +1,2 @@
+Control logic for vessels.
+FIXME AI and WM modules should probably be moved here along with various other modules, e.g., WingCommander.
