@@ -1,4 +1,9 @@
 # North Kerbin Dynamic Renewed
+![Static Badge](https://img.shields.io/badge/License-CC_4.0_BY_SA-green)
+![Static Badge](https://img.shields.io/badge/Build-Passing-brightgreen)
+
+
+
 NKDR official
 Send pull requests to dev branch all others will be rejected.  
 Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate everything there.
