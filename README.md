@@ -1,7 +1,39 @@
-# NKDR
+# North Kerbin Dynamic Renewed
 NKDR official
 Send pull requests to dev branch all others will be rejected.  
-Hey NKD workin?  
-YESSS Absolutly this is going to be a fun ride!!  
-From a small "Davy" to the monstrosity "Tzar" this mod contains a variety of parts plus some new ones.  
-This mod will be frequetly updated by me and NSI as I want to bring this mod back again with more customization and its own working plugin.
+Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate everything there.
+# Requirements
+* Physic Range Extender
+* BDArmory Plus Modified (Links soon)
+* Module Manager
+* KSP 1.9.1 - 1.12.2
+# Conflicts
+* Hard Incompatibilities:
+  * Ferram Aerospace
+  * Kerbal Krash System
+  * Next Stars Industries
+* Soft Incompatibilities:
+  * Scatter
+  * EVE (INCLUDING VOLUMETRIC EVE)
+# Usage
+*Missiles:
+  *Idk how to target
+  *Press Fire to fire missile
+*Bomb:
+  *Idk how to target
+  *Press Fire to drop
+*Guns:
+  *Add Weapon Manager to your craft
+  *Before firing, Open weapon manager UI and click Trigger to arm
+  *Small gun, Click to fire I think
+  *Large guns, Toggle to fire I think
+# Issue
+  * Skill
+  * Idk rn
+# Do It Your Self Guide
+For advance modders
+* [Build the DLL Guide](https://pages.github.com/)
+* [Creating Particles](https://pages.github.com/)
+* [Creating the Parts](https://pages.github.com/)
+
+
