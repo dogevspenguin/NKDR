@@ -1,0 +1,2 @@
+Radar related modules and utils.
+FIXME There's several functions in RadarUtils that aren't radar related. Also ViewScanResults.

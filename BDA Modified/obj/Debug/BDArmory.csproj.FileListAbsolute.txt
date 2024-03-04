@@ -1,0 +1,9 @@
+C:\Users\AORUS\Downloads\BDArmory.dll
+C:\Users\AORUS\Downloads\BDArmory.pdb
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\_LocalDev\LocalDev\BDArmory.dll
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\_LocalDev\LocalDev\BDArmory.pdb
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\BDArmory\obj\Debug\BDArmory.csproj.AssemblyReference.cache
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\BDArmory\obj\Debug\BDArmory.csproj.CoreCompileInputs.cache
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\BDArmory\obj\Debug\BDArmory.csproj.CopyComplete
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\BDArmory\obj\Debug\BDArmory.dll
+C:\Users\AORUS\Downloads\BDArmory-1.6.11.0\BDArmory\obj\Debug\BDArmory.pdb
