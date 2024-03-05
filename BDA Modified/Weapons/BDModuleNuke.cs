@@ -61,6 +61,18 @@ namespace BDArmory.Weapons
         public bool isEMP = false;
 
         [KSPField(isPersistant = true)]
+        public float fluenceTime = 0.05f;
+
+        [KSPField(isPersistant = true)]
+        public float emitTime = 0.3f;
+
+        [KSPField(isPersistant = true)]
+        public float fireballEmitTime = 1.5f;
+
+        [KSPField(isPersistant = true)]
+        public float effectLifetime = 1.5f;
+
+        [KSPField(isPersistant = true)]
         public bool engineCore = false;
 
         [KSPField(isPersistant = true)]
@@ -254,7 +266,7 @@ namespace BDArmory.Weapons
             }
             if (BDArmorySettings.DEBUG_OTHER) Debug.Log("[BDArmory.BDModuleNuke]: Running Detonate() on nukeModule in vessel " + Sourcevessel);
             //affect any nearby parts/vessels that aren't the source vessel
-            NukeFX.CreateExplosion(part.transform.position, Launcher != null ? ExplosionSourceType.Missile : ExplosionSourceType.BattleDamage, Sourcevessel, reportingName, 0, thermalRadius, yield, fluence, isEMP, blastSoundPath, flashModelPath, shockModelPath, blastModelPath, plumeModelPath, debrisModelPath, "", "", nukePart: part);
+            NukeFX.CreateExplosion(part.transform.position, Launcher != null ? ExplosionSourceType.Missile : ExplosionSourceType.BattleDamage, Sourcevessel, reportingName, 0, thermalRadius, yield, fluence, isEMP, blastSoundPath, flashModelPath, shockModelPath, blastModelPath, plumeModelPath, debrisModelPath, "", "", nukePart: part,null,default,fireballEmitTime,emitTime,fluenceTime,effectLifetime);
             hasDetonated = true;
             if (part.vessel != null) // Already in the process of being destroyed.
                 part.Destroy();
