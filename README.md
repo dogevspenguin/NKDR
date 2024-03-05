@@ -4,9 +4,13 @@
 
 
 
-NKDR official
+NKDR is made by Harpwner and is under CC-BY-SA 4.0
+BDA+ is made by BDA+ team and is under CC-BY-SA 2.0
 Send pull requests to dev branch all others will be rejected.  
-Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate everything there.
+
+The source code of North Kerbin Dynamics, where you can modify to your heart's desire
+If you made anything out of it, Please remember to the respective owners listed above and enjoy nuking kerbin!!
+
 # Requirements
 * Physic Range Extender
 * BDArmory Plus Modified (Links soon)
@@ -14,12 +18,13 @@ Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate ev
 * KSP 1.9.1 - 1.12.2
 # Conflicts
 * Hard Incompatibilities:
-  * Ferram Aerospace
-  * Kerbal Krash System
-  * Next Stars Industries
+  * **Ferram Aerospace** - ???
+  * **Kerbal Krash System** - Modify crash system
+  * **Next Stars Industries** - Contains same parts
 * Soft Incompatibilities:
-  * Scatter
-  * EVE (INCLUDING VOLUMETRIC EVE)
+  * **Scatter** - Very mild 
+  * **EVE** - Clouds 
+  * **EVE Volumetric** - Cloud will overlap, when it is not supposed to
 # Usage
 *Missiles:
   * Idk how to target
