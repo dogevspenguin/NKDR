@@ -101,13 +101,8 @@ namespace BDArmory.FX
         private void OnEnable()
         {
             StartTime = Time.time;
-            MaxTime = effectLifetime; // Scale MaxTime to get a reasonable visualisation of the explosion.
-            scale = 1;
-            if (scaleByYield)
-            {
-                scale = BDAMath.Sqrt(400 * (6 * yield)) / 219;
-                MaxTime = BDAMath.Sqrt((thermalRadius / ExplosionVelocity) * 3f) * 2f; // Scale MaxTime to get a reasonable visualisation of the explosion.
-            }
+            MaxTime = effectLifetime; //BDAMath.Sqrt((thermalRadius / ExplosionVelocity) * 3f) * 2f; // Scale MaxTime to get a reasonable visualisation of the explosion.
+            scale = 1;//BDAMath.Sqrt(400 * (6 * yield)) / 219;
             if (BDArmorySettings.DEBUG_DAMAGE)
             {
                 Debug.Log($"[BDArmory.NukeFX]: Explosion started! yield: {yield}  BlastRadius: {thermalRadius} StartTime: {StartTime}, Duration: {MaxTime}");
@@ -336,7 +331,7 @@ namespace BDArmory.FX
             {
                 if (hasDetonated)
                 {
-                    if (LightFx != null) LightFx.intensity -= 12 * scale * Time.deltaTime;
+                    if (LightFx != null) LightFx.intensity -= 0.020f*fluence/fluenceTime;
                     if (TimeIndex > emitTime && pEmitters != null) // 0.3s seems to be enough to always show the explosion, but 0.2s isn't for some reason.
                     {
                         if (TimeIndex > emitTime && pEmitters != null) // 0.3s seems to be enough to always show the explosion, but 0.2s isn't for some reason.
@@ -377,7 +372,7 @@ namespace BDArmory.FX
 
                     LightFx = gameObject.GetComponent<Light>();
                     LightFx.range = thermalRadius;
-                    LightFx.intensity = thermalRadius / 3f;
+                    LightFx.intensity = fluence;
                     if (lastValidAtmDensity < 0.05)
                     {
                         if (!string.IsNullOrWhiteSpace(flashModelPath))
@@ -391,11 +386,12 @@ namespace BDArmory.FX
                         //scaling calc is roughly SqRt( 400 * (6x))
                         //fireball diameter is 59 * Mathf.Pow(yield, 0.4f), apparently?
                         if (!string.IsNullOrWhiteSpace(flashModelPath))
-                            fxEmitters.Add(FXEmitter.CreateFX(Position, scale, flashModelPath, "", emitTime, -1, default, true));
+                            fxEmitters.Add(FXEmitter.CreateFX(Position, scale, flashModelPath, "", emitTime, effectLifetime, default, true));
                         if (!string.IsNullOrWhiteSpace(shockModelPath))
-                            fxEmitters.Add(FXEmitter.CreateFX(Position, scale * lastValidAtmDensity, shockModelPath, "", emitTime, -1, default, true));
+                            fxEmitters.Add(FXEmitter.CreateFX(Position, scale * lastValidAtmDensity, shockModelPath, "", emitTime, effectLifetime, default, true));
                         if (!string.IsNullOrWhiteSpace(blastModelPath))
-                            fxEmitters.Add(FXEmitter.CreateFX(Position, scale, blastModelPath, blastSoundPath, fireballEmitTime,effectLifetime, default, true));
+                         Debug.Log($"[BDArmory.NukeFX]: EMIT TIME: {emitTime}  FIREBALL EMT: {fireballEmitTime}, Duration: {MaxTime}");
+                        fxEmitters.Add(FXEmitter.CreateFX(Position, scale, blastModelPath, blastSoundPath, emitTime, effectLifetime, default, true));
 
                         if (BodyUtils.GetRadarAltitudeAtPos(Position) < 200 * scale)
                         {
@@ -403,9 +399,9 @@ namespace BDArmory.FX
                             double longitudeAtPos = FlightGlobals.currentMainBody.GetLongitude(Position);
                             double altitude = FlightGlobals.currentMainBody.TerrainAltitude(latitudeAtPos, longitudeAtPos);
                             if (!string.IsNullOrWhiteSpace(plumeModelPath))
-                                FXEmitter.CreateFX(FlightGlobals.currentMainBody.GetWorldSurfacePosition(latitudeAtPos, longitudeAtPos, altitude), scale, plumeModelPath, "", effectLifetime, effectLifetime, default, true, true);
+                                FXEmitter.CreateFX(FlightGlobals.currentMainBody.GetWorldSurfacePosition(latitudeAtPos, longitudeAtPos, altitude), Mathf.Clamp(scale, 0.01f, 3f), plumeModelPath, "", effectLifetime, effectLifetime, default, true, true);
                             if (!string.IsNullOrWhiteSpace(debrisModelPath))
-                                FXEmitter.CreateFX(FlightGlobals.currentMainBody.GetWorldSurfacePosition(latitudeAtPos, longitudeAtPos, altitude), scale, debrisModelPath, "", fireballEmitTime, effectLifetime, default, true);
+                                FXEmitter.CreateFX(FlightGlobals.currentMainBody.GetWorldSurfacePosition(latitudeAtPos, longitudeAtPos, altitude), scale, debrisModelPath, "", 1.5f, effectLifetime, default, true);
                         }
                     }
                 }
@@ -642,7 +638,7 @@ namespace BDArmory.FX
         public static void CreateExplosion(Vector3 position, ExplosionSourceType explosionSourceType, string sourceVesselName, string sourceWeaponName = "Nuke",
             float delay = 2.5f, float blastRadius = 750, float Yield = 0.05f, float thermalShock = 0.05f, bool emp = true, string blastSound = "",
             string flashModel = "", string shockModel = "", string blastModel = "", string plumeModel = "", string debrisModel = "", string ModelPath = "", string soundPath = "",
-            Part nukePart = null, Part hitPart = null, Vector3 sourceVelocity = default)
+            Part nukePart = null, Part hitPart = null, Vector3 sourceVelocity = default, float fireballT=1.5f,float emitT=0.3f,float fluenceT = 0.35f,float effT = 30f)
         {
             SetupPool(ModelPath, soundPath, blastRadius);
 
@@ -668,6 +664,11 @@ namespace BDArmory.FX
             eFx.plumeModelPath = plumeModel;
             eFx.debrisModelPath = debrisModel;
             eFx.blastSoundPath = blastSound;
+            eFx.fireballEmitTime = fireballT;
+            eFx.emitTime = emitT;
+            eFx.fluenceTime = fluenceT;
+            eFx.effectLifetime = effT;
+
 
             eFx.yield = Yield;
             eFx.fluence = thermalShock;
@@ -701,4 +702,3 @@ namespace BDArmory.FX
         public DestructibleBuilding Building { get; set; }
     }
 }
-
