@@ -5,7 +5,9 @@
 
 
 NKDR is made by Harpwner and is under CC-BY-SA 4.0
+
 BDA+ is made by BDA+ team and is under CC-BY-SA 2.0
+
 Send pull requests to dev branch all others will be rejected.  
 
 The source code of North Kerbin Dynamics, where you can modify to your heart's desire
