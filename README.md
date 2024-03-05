@@ -38,7 +38,7 @@ Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate ev
 # Do It Your Self Guide
 For advance modders
 * [Build the DLL Guide](https://github.com/dogevspenguin/NKDR/blob/master/BDA%20Modified/Guide.md)
-* [Creating Particles](https://pages.github.com/)
+* [Creating Particles](https://github.com/dogevspenguin/NKDR/blob/master/Particle%20guide.md)
 * [Creating the Parts](https://pages.github.com/)
 
 
