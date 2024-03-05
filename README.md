@@ -26,13 +26,13 @@ If you made anything out of it, Please remember to the respective owners listed 
   * **EVE** - Clouds 
   * **EVE Volumetric** - Cloud will overlap, when it is not supposed to
 # Usage
-*Missiles:
+* Missiles:
   * Idk how to target
   * Press Fire to fire missile
-*Bomb:
+* Bomb:
   * Idk how to target
   * Press Fire to drop
-*Guns:
+* Guns:
   * Add Weapon Manager to your craft
   * Before firing, Open weapon manager UI and click Trigger to arm
   * Small gun, Click to fire I think
