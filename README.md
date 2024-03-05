@@ -22,16 +22,16 @@ Well, I've made quite a mess on kerbin, As this mod with absolutly obliterate ev
   * EVE (INCLUDING VOLUMETRIC EVE)
 # Usage
 *Missiles:
-  *Idk how to target
-  *Press Fire to fire missile
+  * Idk how to target
+  * Press Fire to fire missile
 *Bomb:
-  *Idk how to target
-  *Press Fire to drop
+  * Idk how to target
+  * Press Fire to drop
 *Guns:
-  *Add Weapon Manager to your craft
-  *Before firing, Open weapon manager UI and click Trigger to arm
-  *Small gun, Click to fire I think
-  *Large guns, Toggle to fire I think
+  * Add Weapon Manager to your craft
+  * Before firing, Open weapon manager UI and click Trigger to arm
+  * Small gun, Click to fire I think
+  * Large guns, Toggle to fire I think
 # Issue
   * Skill
   * Idk rn
