@@ -29,7 +29,7 @@ If you made anything out of it, Please remember to the respective owners listed 
   * **EVE Volumetric** - Cloud will overlap, when it is not supposed to
 # Usage
 * Missiles:
-  * Idk how to target
+  * Some do work with guiding, The ATAM or something I think
   * Press Fire to fire missile
 * Bomb:
   * Idk how to target
