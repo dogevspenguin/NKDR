@@ -21,7 +21,7 @@ then:
 * **Size:** Size of particle in metre
 * **Sizegrow:** Make particle grow overtime (chaotic, set around 0.1)
 * **Energy:** Lifetime of each particle in seconds
-* **Emit:** Amount of particle to emit per second
+* **Emit:** Amount of particle to emit **per second**
 * **Random velocity:** Generate a velocity inbound of the vector specified, can be used to make expanding particle, but looks bad
 * **Angular Velocity:** How fast it spins
 * **Max size:** Max size onscreen, 1 for whole screen
