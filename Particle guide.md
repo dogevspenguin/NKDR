@@ -10,6 +10,7 @@ then:
 * Add Partools component to the outer one
 * Add KSP Particle Emitter component to the one inside
 * Create a material using ONLY the shaders avialable in KSP directory
+* Enable Play On Awake (Idk why this is required, otherwise particle will loop)
 # Limitations
 * No particle can Puff outward (You can increase the size)
 * 1 KSP emitter per .mu written
