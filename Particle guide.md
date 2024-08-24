@@ -15,6 +15,7 @@ then:
 * No particle can Puff outward (You can increase the size)
 * 1 KSP emitter per .mu written
 * You cannot make a glowing particle turns into black smoke using gradients, Itll disappear, Use 2 particles for this case
+* Inorder for new numerical values in cfg of nuke to take effect, The craft must be relaunched, and the nuke reattached.
 # KSP Particle Emitter
 * **Material:** the material the particle will use
 * **Size:** Size of particle in metre
