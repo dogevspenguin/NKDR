@@ -16,15 +16,18 @@ then:
 * 1 KSP emitter per .mu written
 * You cannot make a glowing particle turns into black smoke using gradients, Itll disappear, Use 2 particles for this case
 * Inorder for new numerical values in cfg of nuke to take effect, The craft must be relaunched, and the nuke reattached.
+# Texture guide
+* Here we use fried chicken method, Find some fried chicken, Then photoshop a radial gradient fading to transparent around it, This would result in decent looking smoke, Try adding some noise to the radial gradient, or you could just steal the texture from NKD
 # KSP Particle Emitter
 * **Material:** the material the particle will use
 * **Size:** Size of particle in metre
 * **Sizegrow:** Make particle grow overtime (chaotic, set around 0.1)
 * **Energy:** Lifetime of each particle in seconds
 * **Emit:** Amount of particle to emit **per second**
-* **Random velocity:** Generate a velocity inbound of the vector specified, can be used to make expanding particle, but looks bad
+* **Random velocity:** Generate a velocity inbound of the vector specified, can be used to make expanding particle, but randomization will result in cube like objects
 * **Angular Velocity:** How fast it spins
 * **Max size:** Max size onscreen, 1 for whole screen
+* **Min size:** Min size of particle, as a fractional value of total screen
 # Exporting
 * Click set up material first
 * Go into parttools component
