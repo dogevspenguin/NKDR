@@ -41,7 +41,7 @@ If you made anything out of it, Please remember to the respective owners listed 
   * Large guns, Toggle to fire I think
 # Issue
   * Skill
-  * Idk rn
+  * Bad particle system, Will make a module but with support for inf particle later after figuring out instantiation
 # Do It Your Self Guide
 For advance modders
 * [Build the DLL Guide](https://github.com/dogevspenguin/NKDR/blob/master/BDA%20Modified/Guide.md)
