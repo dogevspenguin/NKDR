@@ -23,6 +23,7 @@ If you made anything out of it, Please remember to the respective owners listed 
   * **Ferram Aerospace** - ???
   * **Kerbal Krash System** - Modify crash system
   * **Next Stars Industries** - Contains same parts
+  * **Simple Repaint** - Follow https://forum.kerbalspaceprogram.com/topic/194919-north-kerbin-dynamics-renewed/page/5 
 * Soft Incompatibilities:
   * **Scatter** - Very mild 
   * **EVE** - Clouds 
